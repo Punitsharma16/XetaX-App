@@ -1,4 +1,4 @@
-# XetaX CRM Mobile (React Native / Expo SDK 54, JavaScript)
+# XetaX CRM Mobile (React Native / Expo SDK 57, JavaScript)
 
 Android/iOS companion app for **XetaX CRM**. It talks to the **same Spring Boot backend** as the
 web panel (`https://api.xetacrm.pro/`) with the same login, roles and data — nothing in the backend
