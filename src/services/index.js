@@ -71,13 +71,38 @@ export const notifications = {
   feed: () => api.data('api/notifications'),
   markRead: (id) => api.post(`api/notifications/${id}/read`, {})
 };
+/** Where the 9 AM morning digest is delivered — same endpoint as the panel's profile card. */
+export const settings = {
+  digest: () => api.data('api/settings/digest'),
+  saveDigest: (body) => api.putData('api/settings/digest', body)
+};
 export const whatsapp = {
   config: () => api.data('api/whatsapp/config'),
   conversations: (page = 0, size = 50) => api.data('api/whatsapp/conversations', { page, size }),
   messages: (id, page = 0, size = 50) => api.data(`api/whatsapp/conversations/${id}/messages`, { page, size }),
   templates: () => api.data('api/whatsapp/templates'),
-  send: (body) => api.postData('api/whatsapp/messages/send', body)
+  send: (body) => api.postData('api/whatsapp/messages/send', body),
+  /**
+   * This month's message counts and what they are estimated to cost, beside
+   * WhatsApp's own figures. Read-only: rates and plans are set on the panel.
+   */
+  usage: () => api.data('api/whatsapp/usage')
 };
+/**
+ * WhatsApp Flows — the forms a customer fills inside the chat.
+ *
+ * Building one needs a picker, field mapping and sometimes raw JSON, so the
+ * app deliberately does not author them: it sends a published Flow to a
+ * customer and shows what came back.
+ */
+export const flows = {
+  list: () => api.data('api/whatsapp/flows'),
+  get: (id) => api.data(`api/whatsapp/flows/${id}`),
+  send: (body) => api.postData('api/whatsapp/flows/send', body),
+  responses: (flowId, page = 0, size = 30) =>
+  api.data('api/whatsapp/flows/responses', flowId ? { flowId, page, size } : { page, size })
+};
+
 export const desk = {
   badge: () => api.data('api/desk/badge'),
   state: () => api.data('api/desk/state'),
@@ -97,4 +122,17 @@ export const invoices = {
   list: (page = 0, size = 30) => api.data('api/invoices', { page, size }),
   get: (id) => api.data(`api/invoices/${id}`),
   pdfUrl: (id) => api.url(`api/invoices/${id}/pdf`)
+};
+
+/** Bulk email from the org's own SMTP — /api/email/campaigns (same shape as WhatsApp campaigns). */
+export const emailCampaigns = {
+  status: () => api.data('api/email/campaigns/status'),
+  list: (page = 0, size = 30) => api.data('api/email/campaigns', { page, size }),
+  get: (id) => api.data(`api/email/campaigns/${id}`),
+  create: (input) => api.postData('api/email/campaigns', input),
+  start: (id, scheduledAt) => api.postData(`api/email/campaigns/${id}/start`, scheduledAt ? { scheduledAt } : {}),
+  pause: (id) => api.postData(`api/email/campaigns/${id}/pause`, {}),
+  resume: (id) => api.postData(`api/email/campaigns/${id}/resume`, {}),
+  cancel: (id) => api.postData(`api/email/campaigns/${id}/cancel`, {}),
+  recipients: (id, status, page = 0, size = 100) => api.data(`api/email/campaigns/${id}/recipients`, { page, size, status: status || undefined })
 };

@@ -29,12 +29,15 @@ APK / AAB build steps: see [BUILD.md](BUILD.md).
 | Tasks (filter, mark done, new task linked to a record) | `tasks/*` |
 | AI assistant (chat over your CRM data) | `ai/chat` |
 | More — Contacts, Invoices + detail, Team (add member), Notifications, Profile, sign out | `contacts`, `invoices`, `team`, `notifications`, `auth/v1/logoutRefreshToken` |
+| More → Email Campaigns — list, create (records / all contacts), detail with start / pause / resume / cancel and per-recipient status. CSV audiences are web-panel only. | `email/campaigns`, `email/campaigns/status`, `forms`, `fields` |
+| More → WhatsApp Flows — published Flows, send one to a customer, and read every submission with the record it created. Building a Flow is web-panel only. | `whatsapp/flows`, `whatsapp/flows/send`, `whatsapp/flows/responses` |
 
-Not on mobile (use the web panel): form/stage design, automations, WhatsApp setup, billing.
+Not on mobile (use the web panel): form/stage design, automations, WhatsApp setup, billing,
+building Flows and authoring rich templates (media headers, buttons, carousels).
 
 ## Structure
 ```
-src/app/         expo-router screens: (auth)/*, (tabs)/{index,records,inbox,tasks,more}, record/*, records/[slug], chat/[id], desk/[id], invoice/[id], task/new, ai, contacts, invoices, team, notifications, profile
+src/app/         expo-router screens: (auth)/*, (tabs)/{index,records,inbox,tasks,more}, record/*, records/[slug], chat/[id], desk/[id], invoice/[id], email-campaign/*, task/new, ai, contacts, invoices, email-campaigns, flows, team, notifications, profile
 src/services/    one API wrapper per area (index.js)
 src/lib/         api.js (fetch + Bearer + envelope unwrap + refresh), storage.js, config.js, hooks.js
 src/state/       auth provider (auth.jsx), toast provider

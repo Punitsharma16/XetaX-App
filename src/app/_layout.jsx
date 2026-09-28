@@ -36,6 +36,12 @@ export default function RootLayout() {
               <Stack.Screen name="notifications" options={{ title: 'Notifications' }} />
               <Stack.Screen name="invoices" options={{ title: 'Invoices' }} />
               <Stack.Screen name="invoice/[id]" options={{ title: 'Invoice' }} />
+              <Stack.Screen name="flows" options={{ title: 'WhatsApp Flows' }} />
+              <Stack.Screen name="templates" options={{ title: 'Message templates' }} />
+              <Stack.Screen name="message-costs" options={{ title: 'Message costs' }} />
+              <Stack.Screen name="email-campaigns" options={{ title: 'Email campaigns' }} />
+              <Stack.Screen name="email-campaign/[id]" options={{ title: 'Campaign' }} />
+              <Stack.Screen name="email-campaign/new" options={{ title: 'New email campaign', presentation: 'modal' }} />
               <Stack.Screen name="contacts" options={{ title: 'Contacts' }} />
               <Stack.Screen name="team" options={{ title: 'Team' }} />
               <Stack.Screen name="profile" options={{ title: 'My profile' }} />

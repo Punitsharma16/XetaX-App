@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View } from 'react-native';
 
+import { DigestCard } from '@/features/digest-card';
 import { api } from '@/lib/api';
 import { useAuth } from '@/state/auth';
 import { useToast } from '@/state/toast';
@@ -54,6 +55,7 @@ export default function ProfileScreen() {
         <Input label="New password" value={password} onChangeText={setPassword} secureTextEntry placeholder="Leave blank to keep the current one" />
       </Card>
       <Button title="Save changes" icon="save-outline" onPress={save} loading={busy} style={{ marginTop: space.md }} />
+      <DigestCard />
     </Screen>);
 
 }

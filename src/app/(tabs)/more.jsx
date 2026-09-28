@@ -37,6 +37,10 @@ export default function MoreScreen() {
         <ListRow leading={<Ionicons name="sparkles-outline" size={20} color={colors.brand} />} title="AI Assistant" subtitle="Ask about your CRM or get things done" onPress={() => router.push('/ai')} />
         <ListRow leading={<Ionicons name="people-outline" size={20} color={colors.brand} />} title="Contacts" onPress={() => router.push('/contacts')} />
         <ListRow leading={<Ionicons name="receipt-outline" size={20} color={colors.brand} />} title="Invoices" onPress={() => router.push('/invoices')} />
+        <ListRow leading={<Ionicons name="albums-outline" size={20} color={colors.brand} />} title="WhatsApp Flows" subtitle="Send a form your customer fills inside the chat" onPress={() => router.push('/flows')} />
+        <ListRow leading={<Ionicons name="document-text-outline" size={20} color={colors.brand} />} title="Message Templates" subtitle="What is approved to send outside the 24-hour window" onPress={() => router.push('/templates')} />
+        <ListRow leading={<Ionicons name="calculator-outline" size={20} color={colors.brand} />} title="Message Costs" subtitle="This month's WhatsApp spend, beside WhatsApp's own figures" onPress={() => router.push('/message-costs')} />
+        <ListRow leading={<Ionicons name="mail-outline" size={20} color={colors.brand} />} title="Email Campaigns" subtitle="Bulk email from your own address" onPress={() => router.push('/email-campaigns')} />
         <ListRow leading={<Ionicons name="notifications-outline" size={20} color={colors.brand} />} title="Notifications" onPress={() => router.push('/notifications')} />
         <ListRow leading={<Ionicons name="person-add-outline" size={20} color={colors.brand} />} title="Team" onPress={() => router.push('/team')} />
       </Card>
