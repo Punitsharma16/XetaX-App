@@ -66,7 +66,7 @@ export default function InboxTab() {
           {state.data && !state.data.enabled ? <Empty icon="headset-outline" title="Live chat desk is off" text="It switches on when an AI agent or WhatsApp is live." /> : null}
           {state.data?.enabled && requests.length === 0 ? <Empty icon="headset-outline" title="No one is waiting" text="Requests appear here when a customer asks for a person." /> : null}
           {requests.map((r) =>
-        <Card key={r.id} style={r.escalated ? { borderColor: '#F5B7B1' } : undefined}>
+        <Card key={r.id} style={r.escalated ? { borderColor: colors.dangerLine } : undefined}>
               <View style={{ flexDirection: 'row', alignItems: 'center', gap: 8 }}>
                 <Ionicons name={r.channel === 'WHATSAPP' ? 'logo-whatsapp' : 'globe-outline'} size={16} color={r.channel === 'WHATSAPP' ? colors.whatsapp : colors.brand} />
                 <Text style={styles.name}>{r.customer}</Text>

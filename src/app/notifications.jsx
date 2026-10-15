@@ -58,7 +58,7 @@ export default function NotificationsScreen() {
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'flex-start', gap: space.md },
-  unread: { borderColor: colors.brand + '55', backgroundColor: '#FBFBFF' },
+  unread: { borderColor: colors.brand + '55', backgroundColor: colors.surfaceTint },
   icon: { width: 36, height: 36, borderRadius: 12, alignItems: 'center', justifyContent: 'center' },
   title: { color: colors.text, fontSize: 14.5 },
   dot: { width: 8, height: 8, borderRadius: 4, backgroundColor: colors.brand, marginTop: 6 }

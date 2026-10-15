@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
   markText: { color: colors.inverse, fontSize: 34, fontWeight: '800' },
   title: { color: colors.inverse, fontSize: 26, fontWeight: '800', marginTop: space.lg, letterSpacing: -0.3 },
   tag: { color: 'rgba(255,255,255,0.8)', marginTop: 4, fontSize: 13, letterSpacing: 0.4 },
-  card: { marginTop: -28, marginHorizontal: space.lg, marginBottom: space.xl, backgroundColor: colors.surface, borderRadius: radius.xl, padding: space.xl, borderWidth: 1, borderColor: colors.border, elevation: 4, shadowColor: '#161B2E', shadowOpacity: 0.08, shadowRadius: 16, shadowOffset: { width: 0, height: 8 } },
+  card: { marginTop: -28, marginHorizontal: space.lg, marginBottom: space.xl, backgroundColor: colors.surface, borderRadius: radius.xl, padding: space.xl, borderWidth: 1, borderColor: colors.border, elevation: 4, shadowColor: colors.text, shadowOpacity: 0.08, shadowRadius: 16, shadowOffset: { width: 0, height: 8 } },
   heading: { fontSize: 22, fontWeight: '800', color: colors.text, marginBottom: 2 },
   error: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: colors.dangerSoft, padding: 10, borderRadius: radius.md, marginBottom: space.md },
   errorText: { color: colors.danger, fontSize: 13, flex: 1 },

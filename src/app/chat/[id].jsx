@@ -100,6 +100,12 @@ export default function ChatScreen() {
     {setSending(false);}
   };
 
+  /*
+   * WhatsApp's own palette, on purpose: the read-tick blue and the wallpaper
+   * beige below are what a customer sees in WhatsApp itself. Swapping them for
+   * XetaX brand tokens would make this screen look like a different app than
+   * the conversation it is mirroring.
+   */
   const tick = (m) => m.status === 'READ' ? { name: 'checkmark-done', color: '#53BDEB' } : m.status === 'DELIVERED' ? { name: 'checkmark-done', color: 'rgba(255,255,255,0.8)' } : m.status === 'FAILED' ? { name: 'alert-circle', color: '#FFB4B4' } : m.status === 'SENT' ? { name: 'checkmark', color: 'rgba(255,255,255,0.8)' } : { name: 'time-outline', color: 'rgba(255,255,255,0.7)' };
 
   return (

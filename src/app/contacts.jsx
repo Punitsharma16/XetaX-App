@@ -54,7 +54,7 @@ export default function ContactsScreen() {
       </View>
       {loading && items.length === 0 ? <Loading /> : null}
       {error && items.length === 0 ? <ErrorState message={error} onRetry={load} /> : null}
-      <FlatList data={items} keyExtractor={(c) => String(c.id)} contentContainerStyle={{ padding: space.lg, gap: space.sm }} refreshing={loading && items.length > 0} onRefresh={load}
+      <FlatList data={items} keyExtractor={(c) => String(c.id)} contentContainerStyle={{ padding: space.lg, paddingBottom: space.xxl, gap: space.sm }} refreshing={loading && items.length > 0} onRefresh={load}
       ListEmptyComponent={!loading && !error ? <Empty icon="people-outline" title="No contacts" text={query ? 'Nothing matches.' : 'Add your first contact with +'} /> : null}
       renderItem={({ item: c }) =>
       <View style={styles.row}>

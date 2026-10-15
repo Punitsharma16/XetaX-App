@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
   dotText: { color: '#fff', fontSize: 10, fontWeight: '700' },
   body: { paddingHorizontal: space.lg, marginTop: -space.xl, paddingBottom: space.xl },
   grid: { flexDirection: 'row', flexWrap: 'wrap', gap: space.md, marginBottom: space.md },
-  alert: { flexDirection: 'row', alignItems: 'center', backgroundColor: colors.warningSoft, borderColor: '#F5D9A8' },
+  alert: { flexDirection: 'row', alignItems: 'center', backgroundColor: colors.warningSoft, borderColor: colors.warningLine },
   alertTitle: { fontWeight: '700', color: colors.text },
   taskRow: { flexDirection: 'row', alignItems: 'center', gap: 10, paddingHorizontal: space.lg, paddingVertical: 12 },
   sep: { borderTopWidth: 1, borderTopColor: colors.border },

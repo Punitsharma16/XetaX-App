@@ -166,11 +166,11 @@ export function Avatar({ name, size = 40, color }) {
 
 /* ---------------------------------------------------------------- ListRow */
 
-export function ListRow({ title, subtitle, right, leading, onPress, chevron = true
+export function ListRow({ title, subtitle, right, leading, onPress, chevron = true, style
 
 }) {
   return (
-    <Pressable onPress={onPress} style={({ pressed }) => [styles.row, pressed && onPress && { backgroundColor: colors.surfaceAlt }]}>
+    <Pressable onPress={onPress} style={({ pressed }) => [styles.row, pressed && onPress && { backgroundColor: colors.surfaceAlt }, style]}>
       {leading}
       <View style={{ flex: 1, minWidth: 0 }}>
         <Text numberOfLines={1} style={styles.rowTitle}>{title}</Text>
@@ -219,6 +219,24 @@ export function ErrorState({ message, onRetry }) {
   return (
     <Empty icon="alert-circle-outline" title="Something went wrong" text={message}
     action={onRetry ? <Button title="Try again" variant="secondary" icon="refresh" onPress={onRetry} /> : undefined} />);
+
+}
+
+/**
+ * A tinted rounded square behind a list icon.
+ *
+ * <p>A bare outline icon in every row reads as a prototype: nothing separates
+ * one module from the next and the eye has no anchor to scan down. A tinted
+ * tile gives each row a shape of its own and lets the tone carry meaning —
+ * money is green, something destructive is red.
+ */
+export function IconTile({ icon, tone = 'brand', size = 36 }) {
+  const soft = { brand: colors.brandSoft, success: colors.successSoft, warning: colors.warningSoft, danger: colors.dangerSoft, info: colors.infoSoft, muted: colors.surfaceAlt }[tone] || colors.brandSoft;
+  const fg = { brand: colors.brand, success: colors.success, warning: colors.warning, danger: colors.danger, info: colors.info, muted: colors.text2 }[tone] || colors.brand;
+  return (
+    <View style={{ width: size, height: size, borderRadius: radius.md, alignItems: 'center', justifyContent: 'center', backgroundColor: soft }}>
+      <Ionicons name={icon} size={Math.round(size * 0.52)} color={fg} />
+    </View>);
 
 }
 

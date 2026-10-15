@@ -19,6 +19,20 @@ export const colors = {
   text3: '#8A92AB',
   inverse: '#FFFFFF',
 
+  /*
+   * A soft fill needs a border a shade stronger than itself: *Soft alone has
+   * no edge, the full colour shouts. These are that middle step, and they were
+   * being typed as raw hex into one screen at a time.
+   */
+  brandLine: '#C7CEF5',
+  successLine: '#BBE5C8',
+  warningLine: '#F5D9A8',
+  dangerLine: '#F5B7B1',
+  infoLine: '#B9E0F5',
+
+  /** Barely-there tint for a row that wants attention without a full fill. */
+  surfaceTint: '#FBFBFF',
+
   success: '#16A34A',
   successSoft: '#E8F8EE',
   warning: '#D97706',

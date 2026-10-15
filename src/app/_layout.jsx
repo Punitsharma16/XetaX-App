@@ -32,6 +32,10 @@ export default function RootLayout() {
               <Stack.Screen name="task/new" options={{ title: 'New task', presentation: 'modal' }} />
               <Stack.Screen name="chat/[id]" options={{ title: 'Chat' }} />
               <Stack.Screen name="desk/[id]" options={{ title: 'Live chat' }} />
+              <Stack.Screen name="menu" options={{ title: 'Online Menu' }} />
+              <Stack.Screen name="bookings" options={{ title: 'Bookings' }} />
+              <Stack.Screen name="campaigns" options={{ title: 'WhatsApp campaigns' }} />
+              <Stack.Screen name="campaign/[id]" options={{ title: 'Campaign' }} />
               <Stack.Screen name="ai" options={{ title: 'AI Assistant' }} />
               <Stack.Screen name="notifications" options={{ title: 'Notifications' }} />
               <Stack.Screen name="invoices" options={{ title: 'Invoices' }} />

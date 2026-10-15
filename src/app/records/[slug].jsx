@@ -68,7 +68,7 @@ export default function RecordsListScreen() {
       <FlatList
         data={shown}
         keyExtractor={(r) => r.id}
-        contentContainerStyle={{ padding: space.lg, paddingTop: space.sm, gap: space.sm }}
+        contentContainerStyle={{ padding: space.lg, paddingTop: space.sm, paddingBottom: space.xxl, gap: space.sm }}
         onEndReached={() => {if (!loading && items.length < total && !query.trim()) load(page + 1, false);}}
         onEndReachedThreshold={0.4}
         refreshing={loading && items.length > 0}

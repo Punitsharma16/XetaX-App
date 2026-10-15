@@ -125,6 +125,35 @@ export const invoices = {
 };
 
 /** Bulk email from the org's own SMTP — /api/email/campaigns (same shape as WhatsApp campaigns). */
+/**
+ * Online Menu — the QR storefront. Orders placed on the public page arrive as
+ * records in the linked form, so there is nothing to read back here beyond the
+ * menu itself.
+ */
+export const menu = {
+  overview: () => api.get('api/menu'),
+  updateStore: (body) => api.put('api/menu/store', body),
+  updateItem: (id, body) => api.put(`api/menu/items/${id}`, body)
+};
+
+/** Bookings — the public appointment page and the diary behind it. */
+export const booking = {
+  overview: () => api.get('api/booking'),
+  slots: (from, to) => api.get(`api/booking/slots?from=${from}&to=${to}`),
+  cancel: (id) => api.post(`api/booking/slots/${id}/cancel`, {})
+};
+
+/** WhatsApp campaigns — read and control; a new one is built on the web panel. */
+export const campaigns = {
+  list: (page = 0, size = 30) => api.get(`api/whatsapp/campaigns?page=${page}&size=${size}`),
+  get: (id) => api.get(`api/whatsapp/campaigns/${id}`),
+  recipients: (id, status, page = 0, size = 50) =>
+  api.get(`api/whatsapp/campaigns/${id}/recipients?page=${page}&size=${size}` + (status ? `&status=${status}` : '')),
+  pause: (id) => api.post(`api/whatsapp/campaigns/${id}/pause`, {}),
+  resume: (id) => api.post(`api/whatsapp/campaigns/${id}/resume`, {}),
+  cancel: (id) => api.post(`api/whatsapp/campaigns/${id}/cancel`, {})
+};
+
 export const emailCampaigns = {
   status: () => api.data('api/email/campaigns/status'),
   list: (page = 0, size = 30) => api.data('api/email/campaigns', { page, size }),

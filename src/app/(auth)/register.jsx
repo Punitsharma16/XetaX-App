@@ -101,7 +101,7 @@ const styles = StyleSheet.create({
   markText: { color: colors.inverse, fontSize: 30, fontWeight: '800' },
   title: { color: colors.inverse, fontSize: 24, fontWeight: '800', marginTop: space.lg },
   tag: { color: 'rgba(255,255,255,0.8)', marginTop: 4, fontSize: 12.5 },
-  card: { marginTop: -28, marginHorizontal: space.lg, backgroundColor: colors.surface, borderRadius: radius.xl, padding: space.xl, borderWidth: 1, borderColor: colors.border, elevation: 4, shadowColor: '#161B2E', shadowOpacity: 0.08, shadowRadius: 16, shadowOffset: { width: 0, height: 8 } },
+  card: { marginTop: -28, marginHorizontal: space.lg, backgroundColor: colors.surface, borderRadius: radius.xl, padding: space.xl, borderWidth: 1, borderColor: colors.border, elevation: 4, shadowColor: colors.text, shadowOpacity: 0.08, shadowRadius: 16, shadowOffset: { width: 0, height: 8 } },
   error: { flexDirection: 'row', alignItems: 'center', gap: 8, backgroundColor: colors.dangerSoft, padding: 10, borderRadius: radius.md, marginBottom: space.md },
   errorText: { color: colors.danger, fontSize: 13, flex: 1 },
   eye: { position: 'absolute', right: 14, top: 36 },
